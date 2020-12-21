@@ -1,0 +1,186 @@
+*,
+*::after,
+*::before {
+  box-sizing: border-box;
+}
+
+body {
+  background-color: var(--very-light-grayish-blue);
+  background-image: url("../assets/img/bg-top.svg"),
+    url("../assets/img/bg-bottom.svg");
+  background-size: 400px contain;
+  background-repeat: no-repeat;
+  background-position: top right, bottom left;
+  font-family: var(--main-font);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  min-height: 100vh;
+  font-size: 15px;
+}
+
+:root {
+  --very-light-grayish-blue: hsl(240, 78%, 98%);
+  --light-grayish-blue: hsl(234, 14%, 74%);
+  --grayish-blue: hsl(233, 13%, 49%);
+  --dark-grayish-blue: hsl(232, 13%, 33%);
+  --purple-gradient: linear-gradient(
+    100deg,
+    hsl(236, 72%, 79%),
+    hsl(237, 63%, 64%)
+  );
+  --purple-card: linear-gradient(hsl(236, 72%, 79%), hsl(237, 63%, 64%));
+  --main-font: "Montserrat", sans-serif;
+}
+
+.header {
+  text-align: center;
+  margin-left: auto;
+  margin-right: auto;
+  width: 99%;
+}
+.header__title {
+  color: var(--grayish-blue);
+}
+@media screen and (min-width: 1024px) {
+  .header__title {
+    font-size: 3em;
+  }
+}
+
+.pricings {
+  align-items: center;
+  display: flex;
+  justify-content: center;
+}
+.pricings__text {
+  color: var(--light-grayish-blue);
+  font-weight: 700;
+}
+@media screen and (min-width: 1024px) {
+  .pricings__text {
+    font-size: 1.5em;
+  }
+}
+.pricings__checkbox {
+  display: none;
+}
+.pricings__toggle {
+  background-image: var(--purple-gradient);
+  cursor: pointer;
+  border-radius: 1em;
+  margin-left: 1em;
+  margin-right: 1em;
+  height: 30px;
+  width: 50px;
+  position: relative;
+  transition: opacity 0.3s ease-in-out;
+}
+.pricings__toggle::before {
+  background-color: #fff;
+  border-radius: 50%;
+  height: 24px;
+  width: 24px;
+  left: 0.2em;
+  top: 0.2em;
+  content: "";
+  position: absolute;
+  transition: transform 0.3s ease-in-out;
+  transform: translateX(0);
+}
+@media screen and (min-width: 1024px) {
+  .pricings__toggle:hover {
+    opacity: 0.8;
+  }
+}
+.pricings__checkbox:checked + .pricings__toggle::before {
+  transform: translateX(1.3em);
+}
+
+.cards {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(290px, 1fr));
+  grid-gap: 1em;
+  margin-left: auto;
+  margin-right: auto;
+  max-width: 1100px;
+  margin-top: 5em;
+  margin-bottom: 4em;
+  width: 90%;
+}
+
+.card {
+  background-color: white;
+  box-shadow: 0px 20px 40px rgba(212, 210, 244, 0.5);
+  border-radius: 0.5em;
+  color: var(--grayish-blue);
+  max-height: 500px;
+  padding: 1.3em;
+  text-align: center;
+  font-weight: 700;
+}
+.card__price {
+  color: var(--dark-grayish-blue);
+  font-size: 4.5em;
+  margin-top: 0.6em;
+  margin-bottom: 0.6em;
+  align-items: center;
+  display: flex;
+  justify-content: center;
+}
+.card__price::before {
+  content: "$";
+  font-size: 0.6em;
+  margin-right: 0.3em;
+}
+.card__price--white {
+  color: var(--very-light-grayish-blue);
+}
+.card__specs {
+  border-top: 1px solid var(--light-grayish-blue);
+  padding: 1em;
+  margin: 0;
+}
+.card__specs--border-bottom {
+  border-bottom: 1px solid var(--light-grayish-blue);
+}
+.card__link {
+  border-radius: 0.3em;
+  display: block;
+  background: var(--purple-gradient);
+  color: var(--very-light-grayish-blue);
+  margin-top: 3em;
+  margin-bottom: 2em;
+  padding: 1em;
+  text-decoration: none;
+  text-transform: uppercase;
+  transition: background 0.3s ease-in, border 0.3s ease-in, color 0.3s ease-in;
+}
+@media screen and (min-width: 1024px) {
+  .card__link:hover {
+    background: transparent;
+    border: 1px solid #696fdd;
+    color: #696fdd;
+  }
+}
+.card__link--white {
+  background-color: var(--very-light-grayish-blue);
+  background-image: none;
+  color: #696fdd;
+  margin-top: 2em;
+}
+@media screen and (min-width: 1024px) {
+  .card__link--white:hover {
+    border-color: var(--very-light-grayish-blue);
+    color: var(--very-light-grayish-blue);
+  }
+}
+.card--purple {
+  color: var(--very-light-grayish-blue);
+  background-image: var(--purple-card);
+}
+@media screen and (min-width: 1000px) {
+  .card--purple {
+    transform: scale(1.1);
+  }
+}

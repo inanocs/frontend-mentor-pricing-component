@@ -1,0 +1,52 @@
+.pricings {
+  align-items: center;
+  display: flex;
+  justify-content: center;
+
+  &__text {
+    color: var(--light-grayish-blue);
+    font-weight: 700;
+    @media screen and (min-width: 1024px) {
+      font-size: 1.5em;
+    }
+  }
+
+  &__checkbox {
+    display: none;
+  }
+
+  &__toggle {
+    background-image: var(--purple-gradient);
+    cursor: pointer;
+    border-radius: 1em;
+    margin-left: 1em;
+    margin-right: 1em;
+    height: 30px;
+    width: 50px;
+    position: relative;
+    transition: opacity 0.3s ease-in-out;
+
+    &::before {
+      background-color: #fff;
+      border-radius: 50%;
+      height: 24px;
+      width: 24px;
+      left: 0.2em;
+      top: 0.2em;
+      content: "";
+      position: absolute;
+      transition: transform 0.3s ease-in-out;
+      transform: translateX(0);
+    }
+
+    @media screen and (min-width: 1024px) {
+      &:hover {
+        opacity: 0.8;
+      }
+    }
+  }
+
+  &__checkbox:checked + &__toggle::before {
+    transform: translateX(1.3em);
+  }
+}

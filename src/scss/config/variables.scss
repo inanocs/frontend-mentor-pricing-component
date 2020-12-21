@@ -1,0 +1,18 @@
+:root {
+  // Colors
+  --very-light-grayish-blue: hsl(240, 78%, 98%);
+  --light-grayish-blue: hsl(234, 14%, 74%);
+  --grayish-blue: hsl(233, 13%, 49%);
+  --dark-grayish-blue: hsl(232, 13%, 33%);
+
+  --purple-gradient: linear-gradient(
+    100deg,
+    hsl(236, 72%, 79%),
+    hsl(237, 63%, 64%)
+  );
+
+  --purple-card: linear-gradient(hsl(236, 72%, 79%), hsl(237, 63%, 64%));
+
+  // Fonts
+  --main-font: "Montserrat", sans-serif;
+}

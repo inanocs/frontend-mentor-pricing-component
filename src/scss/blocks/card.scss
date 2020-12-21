@@ -1,0 +1,83 @@
+$purple: hsl(237, 63%, 64%);
+.card {
+  background-color: rgb(255, 255, 255);
+  box-shadow: 0px 20px 40px rgba(212, 210, 244, 0.5);
+  border-radius: 0.5em;
+  color: var(--grayish-blue);
+  max-height: 500px;
+  padding: 1.3em;
+  text-align: center;
+  font-weight: 700;
+
+  &__price {
+    color: var(--dark-grayish-blue);
+    font-size: 4.5em;
+    margin-top: 0.6em;
+    margin-bottom: 0.6em;
+    align-items: center;
+    display: flex;
+    justify-content: center;
+
+    &::before {
+      content: "$";
+      font-size: 0.6em;
+      margin-right: 0.3em;
+    }
+
+    &--white {
+      color: var(--very-light-grayish-blue);
+    }
+  }
+
+  &__specs {
+    border-top: 1px solid var(--light-grayish-blue);
+    padding: 1em;
+    margin: 0;
+    &--border-bottom {
+      border-bottom: 1px solid var(--light-grayish-blue);
+    }
+  }
+
+  &__link {
+    border-radius: 0.3em;
+    display: block;
+    background: var(--purple-gradient);
+    color: var(--very-light-grayish-blue);
+    margin-top: 3em;
+    margin-bottom: 2em;
+    padding: 1em;
+    text-decoration: none;
+    text-transform: uppercase;
+    transition: background 0.3s ease-in, border 0.3s ease-in, color 0.3s ease-in;
+
+    @media screen and (min-width: 1024px) {
+      &:hover {
+        background: transparent;
+        border: 1px solid $purple;
+        color: $purple;
+      }
+    }
+    &--white {
+      background-color: var(--very-light-grayish-blue);
+      background-image: none;
+      color: $purple;
+      margin-top: 2em;
+
+      @media screen and (min-width: 1024px) {
+        &:hover {
+          border-color: var(--very-light-grayish-blue);
+          color: var(--very-light-grayish-blue);
+        }
+      }
+    }
+  }
+
+  //Modifications
+  &--purple {
+    color: var(--very-light-grayish-blue);
+    background-image: var(--purple-card);
+    @media screen and (min-width: 1000px) {
+      transform: scale(1.1);
+    }
+  }
+}

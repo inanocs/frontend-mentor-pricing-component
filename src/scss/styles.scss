@@ -1,0 +1,11 @@
+//Base styles
+@use "./base/base.scss";
+
+// Variables
+@use "./config/variables.scss";
+
+// Blocks
+@use "./blocks/header.scss";
+@use "./blocks/pricings.scss";
+@use "./blocks/cards.scss";
+@use "./blocks/card.scss";

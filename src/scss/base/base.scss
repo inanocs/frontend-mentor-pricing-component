@@ -1,0 +1,22 @@
+*,
+*::after,
+*::before {
+  box-sizing: border-box;
+}
+
+body {
+  background-color: var(--very-light-grayish-blue);
+  background-image: url("../assets/img/bg-top.svg"),
+    url("../assets/img/bg-bottom.svg");
+
+  background-size: 400px contain;
+  background-repeat: no-repeat;
+  background-position: top right, bottom left;
+
+  font-family: var(--main-font);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  min-height: 100vh;
+  font-size: 15px;
+}

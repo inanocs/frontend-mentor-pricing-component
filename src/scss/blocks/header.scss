@@ -1,0 +1,13 @@
+.header {
+  text-align: center;
+  margin-left: auto;
+  margin-right: auto;
+  width: 99%;
+
+  &__title {
+    color: var(--grayish-blue);
+    @media screen and (min-width: 1024px) {
+      font-size: 3em;
+    }
+  }
+}
